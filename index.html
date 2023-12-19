@@ -1,0 +1,35 @@
+<!-- <iframe
+  width="1366"
+  height="768"
+  src="https://lookerstudio.google.com/embed/reporting/358922ae-68c2-475b-80f5-66460642d9ca/page/DDUMC"
+  frameborder="0"
+  style="border: 0"
+  allowfullscreen
+></iframe> -->
+
+<div id="iframeContainer">
+  <iframe id="dynamicIframe" frameborder="0" style="border: 0" allowfullscreen></iframe>
+</div>
+
+<script>
+  // Function to set width and height dynamically based on viewport size
+  function setIframeSize() {
+    var iframe = document.getElementById("dynamicIframe");
+    var width =
+      window.innerWidth || document.documentElement.clientWidth || document.body.clientWidth;
+    var height =
+      window.innerHeight || document.documentElement.clientHeight || document.body.clientHeight;
+    iframe.width = width;
+    iframe.height = height;
+  }
+
+  // Set the src attribute for the iframe
+  var iframeSrc =
+    "https://lookerstudio.google.com/embed/reporting/358922ae-68c2-475b-80f5-66460642d9ca/page/DDUMC";
+  var iframe = document.getElementById("dynamicIframe");
+  iframe.src = iframeSrc;
+
+  // Set initial size and adjust on window resize
+  setIframeSize();
+  window.addEventListener("resize", setIframeSize);
+</script>
